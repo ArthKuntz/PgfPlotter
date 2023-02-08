@@ -1,0 +1,21 @@
+\begin{figure}[ht]
+\centering
+	\begin{tikzpicture}
+		\begin{axis} [
+			width = 0.7*\linewidth,
+			height = 0.45*\linewidth,
+			xlabel = $t$,
+			ylabel = Signal,
+			grid = major,
+			grid style = {dashed, gray!30},
+			x unit = \si{\second},
+			]
+			\addplot+[mark=none] table[x=x, y=y1, col sep=semicolon] {sine_wave_superposition.csv};
+			\addplot+[mark=none] table[x=x, y=y2, col sep=semicolon] {sine_wave_superposition.csv};
+			\addplot+[mark=none] table[x=x, y=y3, col sep=semicolon] {sine_wave_superposition.csv};
+			\legend{$s_1(t)$, $s_2(t)$, $s_1(t)+s_2(t)$};
+		\end{axis}
+	\end{tikzpicture}
+\caption{Superposition of two sine waves with different frequencies, amplitudes and phases.} 
+\label{fig:sine_wave_superposition}
+\end{figure}

@@ -4,7 +4,7 @@ import os
 import codecs
 
 
-class PgfPlotter:
+class Plotter:
     def __init__(self,
                  data: np.ndarray,
                  export_name: str,
@@ -35,7 +35,7 @@ class PgfPlotter:
         self.__label = f'fig:{self.__name}'
         self.__legend = None
 
-        self.__code = ['\\begin{figure}[H]\n'
+        self.__code = ['\\begin{figure}[ht]\n'
                        '\\centering\n'
                        '\t\\begin{tikzpicture}\n'
                        ]
