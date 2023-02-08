@@ -50,11 +50,12 @@ class Plotter:
     def set_export_name(self, name):
         self.__name = name
 
-    def set_axis_options(self, options):
+    def set_axis_options(self, options, add_default=True):
         self.__options = options
-        for k in self.__DEFAULT_AXIS_OPTN.keys():
-            if k not in self.__options:
-                self.__options[k] = self.__DEFAULT_AXIS_OPTN[k]
+        if add_default:
+            for k in self.__DEFAULT_AXIS_OPTN.keys():
+                if k not in self.__options:
+                    self.__options[k] = self.__DEFAULT_AXIS_OPTN[k]
 
     def caption(self, caption):
         self.__caption = caption
